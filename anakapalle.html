@@ -1,0 +1,166 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
+    <meta charset="utf-8">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <title>Location of Anakapalle's Hospital</title>
+    <style>
+      /* Always set the map height explicitly to define the size of the div
+       * element that contains the map. */
+      #map {
+        height: 100%;
+      }
+      /* Optional: Makes the sample page fill the window. */
+      html, body {
+        height: 100%;
+        margin: 0;
+        padding: 0;
+	  background-color:light green;
+      }
+		p{
+	font-family:"Times New Roman", Times, serif;
+	font-size:20px;
+	color:#FFFFFF;
+	
+	text-align:center;
+	}
+	h2{font-style:italic;
+	font-size:36px;
+	color:#FFFF99;
+	text-align:center;
+	}
+    </style>
+        <style>
+h1{
+font-size:50px;
+color:#FFFFFF;
+padding-top:60px;
+}
+img 
+{ float: left;
+width: 77px;
+}
+
+body {margin:0;
+padding:0;
+font-family:"Bahnschrift Light", "Bernard MT Condensed", "Berlin Sans FB Demi", "Bell MT";
+width:100%;
+height:100vh;
+background-color:#333333;
+}
+</style>
+  </head>
+  <body>
+    <h1 style="background-color:#666666"class=" text-capitalize text-center "id="top">Hospitals Name</h1>
+    
+  <section >
+    <ul class="list-group text-center text-capitalize " style="font-size:32px">
+      <!-- Link to every section in the page -->
+      <li><a href="#section1">usha prime multispecialist hospital</a></li>
+      <li><a href="#section2">vivekanandha hospital</a></li>
+      <li><a href="#section3">NTR Government hospital</a></li>
+      <li><a href="#section4">GT hospital</a></li>
+      <li><a href="#section5">Kiran eye hospital</a></li>
+    </ul>
+
+  </section>
+
+  <section id="section1">
+    <h2>usha multispecialist hospital</h2>
+    <p>usha multispecialist hospital, is a private medical hospital in anakapalle, established in 1968. It is located in anakapalle. It is affiliated with government hospitals.<br><br>
+Address: pudimadaka road , anakapalle<br><br>
+Hours: Open 24 hours<br>
+Phone: 01552-309666<br>
+Founded: 1968<br>
+hospital affiliation: under government<br></p>
+</section>
+
+  <section id="section2">
+    <h2>vivekanandha hospital </h2>
+    <p>Address: Anakapalle<br><br>
+Hours: Open 24 hours<BR></p></section>
+  <section id="section3">
+    <h2>NTR Government hospital </h2>
+    <p>Address: near satya theatre , anakapalle <br><br>
+Hours: <br><br>
+Tuesday	9AM–5PM<br>
+Wednesday	9AM–5PM<br>
+Thursday    9AM–5PM<br>
+Friday      closed<br>
+Saturday	9AM–5PM<br>
+Sunday	9AM–5PM<br>
+Monday	9AM–5PM<br><br>
+Phone: 0431-71740<BR></p>
+  </section>
+  <section id="section4">
+    <h2>GT hospital</h2>
+    <p>Address : anakapalle<br><br>
+Phone: 01928-201157</p>
+  </section>
+  <section id="section5">
+    <h2>kiran eye hospital</h2>
+    <p>four roads , anakapalle</p>
+  </section>
+<div class="container ">
+<ul class="pager font-weight-bold text-monospace">
+    <li class="center "><a href="#top">Back to Top</a></li>
+   <li class="center "><a href="../index.php">Back To Home Page</a></li>
+</ul></div>
+    <h2  >You can view location in google map</h2>
+    <div id="map"></div>
+    <script>
+
+      function initMap() {
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 10,
+          center: {lat:17.686001, lng:83.008781}
+        });
+
+        // Create an array of alphabetical characters used to label the markers.
+        var labels =['usha prime multispecialist hospital',
+	  'Vivekanandha hospital',
+	  'NTR government hospital',
+	  'GT hospital',
+	  'kiran eye hospital'];
+
+        // Add some markers to the map.
+        // Note: The code uses the JavaScript Array.prototype.map() method to
+        // create an array of markers based on a given "locations" array.
+        // The map() method here has nothing to do with the Google Maps API.
+        var markers = locations.map(function(location, i) {
+          return new google.maps.Marker({
+            position: location,
+            label: labels[i % labels.length]
+          });
+        });
+
+        // Add a marker clusterer to manage the markers.
+        var markerCluster = new MarkerClusterer(map, markers,
+            {imagePath: 'https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/m'});
+      }
+      var locations = [
+        {lat:17.686001, lng:83.008781},
+        {lat:17.686001, lng:83.008781},
+        {lat:17.686001, lng:83.008781},
+        {lat:17.686001, lng:83.008781},
+        {lat:17.686001, lng:83.008781},
+      ]
+
+    </script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js">
+    </script>
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=">
+    </script>
+  </body>
+</html>
